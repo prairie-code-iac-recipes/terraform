@@ -4,7 +4,7 @@ LABEL maintainer="The Salte Team <admin@salte.io>"
 ENV ACCEPT_EULA=Y
 
 RUN apt-get update && \
-    apt-get install -y curl gnupg jq openssl zip && \
+    apt-get install -y curl gnupg jq openssl ssh zip && \
     apt-get clean && \
     curl -o /tmp/terraform.zip https://releases.hashicorp.com/terraform/0.12.7/terraform_0.12.7_linux_amd64.zip && \
     unzip /tmp/terraform.zip -d /usr/local/bin && \
