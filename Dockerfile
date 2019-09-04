@@ -34,6 +34,8 @@ RUN apt-get update && \
     apt-get install -y python python-pip git groff less && \
     pip install --no-cache-dir awscli==$AWS_CLI_VERSION
 
+RUN apt-get install -y amazon-ecr-credential-helper
+
 ENV PATH /opt/mssql-tools/bin:$PATH
 
 ENTRYPOINT ["terraform"]
