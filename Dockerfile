@@ -30,7 +30,8 @@ RUN curl -o /tmp/flyway.tar.gz https://repo1.maven.org/maven2/org/flywaydb/flywa
 # AWS CLI
 ENV AWS_CLI_VERSION=1.16.185
 
-RUN apt-get install -y python python-pip git groff less && \
+RUN apt-get update && \
+    apt-get install -y python python-pip git groff less && \
     pip install --no-cache-dir awscli==$AWS_CLI_VERSION
 
 ENV PATH /opt/mssql-tools/bin:$PATH
